@@ -1,49 +1,34 @@
 import React from "react";
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-import "./style.css";
-
 const Honorable = () => {
-  const [honorable, setHonorable] = useState([]);
+  let name = useParams().name;
+  const [character, setCharacter] = useState([]);
 
+  const getCharacter = async () => {
+    const item = await axios.get(
+      `http://localhost:5000/character/name/${name}`
+    );
+    setCharacter(item.data);
+    console.log(character);
+  };
   useEffect(() => {
-    getHonorable();
+    getCharacter();
     // eslint-disable-next-line
   }, []);
 
-  const getHonorable = async () => {
-    try {
-      const items = await axios.get(
-        "http://localhost:5000/character/honorbale"
-      );
-      //   console.log(items.data);
-      setHonorable(items.data);
-      console.log(honorable);
-    } catch (error) {
-      console.log("error on get honorable", error);
-    }
-  };
-  const characterInfo = (i) => {
-      console.log(i);
-  };
   return (
     <div>
-      <h1>Honorable</h1>
-      {honorable.map((item, i) => {
+      {character.map((item, i) => {
         return (
           <div>
             <ul>
-              <li key={i} onClick={() => characterInfo(item._id)}>
-                <img
-                  className="imageCharacter"
-                  src={item.img}
-                  alt="character face"
-                />
+              <li key={i}>
+                <img src={item.img} alt="character face" />
                 <h1>{item.name}</h1>
-                {/* <img src={item.gif} /> */}
-                {/* <video src={item.video} /> */}
-              </li>{" "}
+              </li>
             </ul>
           </div>
         );

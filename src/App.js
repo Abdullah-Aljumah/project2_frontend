@@ -5,20 +5,22 @@ import { Route } from "react-router";
 import Home from "./components/Home";
 import { Routes } from "react-router";
 import Characters from "./components/Characters/index";
-import Honorable from "./components/Characters/Honorable";
+import Honorables from "./components/Characters/Honorables";
 import Villains from "./components/Characters/Villains";
-import Stink from "./components/Characters/Stink"
+import Stinks from "./components/Characters/Stinks";
+import Honorable from "./components/Characters/Honorable";
 function App() {
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/character" element={<Characters />} />
-        <Route path="/character/honorable" element={<Honorable />} />
-        <Route path="/character/Villains" element={<Villains />} />
-        <Route path="/character/stink" element={<Stink />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/character" element={<Characters />} />
+        <Route exact path="/character/honorable" element={<Honorables />} />
+        <Route exact path="/character/Villains" element={<Villains />} />
+        <Route exact path="/character/stink" element={<Stinks />} />
 
+        <Route path="/character/name/:name" element={<Honorable />} />
       </Routes>
     </div>
   );
