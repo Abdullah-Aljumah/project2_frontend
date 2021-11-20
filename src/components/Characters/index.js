@@ -5,18 +5,18 @@ const Characters = () => {
   return (
     <div>
       <ul>
-        <Link to="/characters/honorable">
+        <Link to="/character/honorable">
           <li>
             <h1>Honorable</h1>
           </li>
         </Link>
-        <Link to="/characters/Villains">
+        <Link to="/character/Villains">
           <li>
             {" "}
             <h1>Villains</h1>
           </li>
         </Link>
-        <Link to="/characters/Stink">
+        <Link to="/character/Stink">
           <li>
             {" "}
             <h1>Stink</h1>

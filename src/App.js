@@ -14,10 +14,10 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/characters/honorable" element={<Honorable />} />
-        <Route path="/characters/Villains" element={<Villains />} />
-        <Route path="/characters/stink" element={<Stink />} />
+        <Route path="/character" element={<Characters />} />
+        <Route path="/character/honorable" element={<Honorable />} />
+        <Route path="/character/Villains" element={<Villains />} />
+        <Route path="/character/stink" element={<Stink />} />
 
       </Routes>
     </div>
