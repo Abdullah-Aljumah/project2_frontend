@@ -25,12 +25,23 @@ const Login = () => {
     e.preventDefault();
     let ckeck = false;
     users.map((item) => {
-      if (item.email == email && item.password == password) {
-        console.log("succ");
+      if (item.email === email && item.password == password) {
+        ckeck = true;
       }
     });
+    if (ckeck) {
+      try {
+        navigate("/home");
+      } catch (error) {
+        console.log("error ", error);
+      }
+    } else {
+      let myWindow = window.open("", "", "width=200,height=100");
+      myWindow.document.write("<p> Wrong email or password </p>");
+      myWindow.focus();
+    }
   };
-  
+
   return (
     <div>
       <form onSubmit={ckeck}>
