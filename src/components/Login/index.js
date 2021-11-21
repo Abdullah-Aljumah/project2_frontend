@@ -24,8 +24,9 @@ const Login = () => {
   const ckeck = (e) => {
     e.preventDefault();
     let ckeck = false;
+    // eslint-disable-next-line
     users.map((item) => {
-      if (item.email === email && item.password == password) {
+      if (item.email === email && item.password === password) {
         ckeck = true;
       }
     });

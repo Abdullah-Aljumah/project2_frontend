@@ -26,9 +26,9 @@ const Honorable = () => {
     
       {character.map((item, i) => {
         return (
-          <div>
+          <div key={i}>
             <ul>
-              <li key={i}>
+              <li >
                 <img src={item.img} alt="character face" />
                 <h1>{item.name}</h1>
               </li>

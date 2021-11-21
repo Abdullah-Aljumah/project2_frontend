@@ -25,9 +25,9 @@ const Stinks = () => {
       <h1>stink</h1>
       {stink.map((item, i) => {
         return (
-          <div>
+          <div  key={i}>
             <ul>
-              <li key={i}>
+              <li>
                 <h1>{item.name}</h1>
                 <p>{item.desc}</p>
                 <img src={item.img} alt="character face" />

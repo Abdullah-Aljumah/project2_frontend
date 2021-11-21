@@ -17,6 +17,7 @@ const Register = () => {
     e.preventDefault();
 
     let check = true;
+        // eslint-disable-next-line
     users.map((item) => {
       if (item.email === email) {
         check = false;

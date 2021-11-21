@@ -8,8 +8,8 @@ const Characters = () => {
         <Link to="/character/honorable">
           <li>
             <h1>Honorable</h1>
-          </li>
-        </Link>
+          </li> 
+        </Link> 
         <Link to="/character/Villains">
           <li>
             {" "}
