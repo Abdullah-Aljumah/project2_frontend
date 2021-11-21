@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: flex; */
+}
+
+.gif {
+    width: 100%;
+    /* height: 50vh; */
+}
+
+.photo {
+    width: 20%;
+}

@@ -45,6 +45,7 @@ const Honorables = () => {
         }}
       />
       {honorable
+       // eslint-disable-next-line
         .filter((item) => {
           if (resSearch === "") {
             return item;
@@ -65,8 +66,7 @@ const Honorables = () => {
                     alt="character face"
                   />
                   <h1>{items.name}</h1>
-                  {/* <img src={item.gif} /> */}
-                  {/* <video src={item.video} /> */}
+      
                 </li>{" "}
                 <button>Favorite</button>
               </ul>
