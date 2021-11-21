@@ -28,9 +28,17 @@ const Honorables = () => {
   const characterInfo = (name) => {
     navigate(`/character/name/${name}`);
   };
+
+  const search = (e) => {
+    let res = e.target.value;
+    honorable.filter((item) => {
+      return item.name == res;
+    });
+  };
   return (
     <div>
       <h1>Honorable</h1>
+      <input onChange={search} type="search" name="search" />
       {honorable.map((item, i) => {
         return (
           <div>
