@@ -29,8 +29,12 @@ const Register = () => {
           "newUser",
           JSON.stringify({ userName, email, password })
         );
-        axios.post("http://localhost:5000/user/register");
-        navigate("/home")
+        axios.post("http://localhost:5000/user/register", {
+          userName: userName,
+          email: email,
+          password: password,
+        });
+        navigate("/home");
       } catch (error) {
         console.log(error);
       }
