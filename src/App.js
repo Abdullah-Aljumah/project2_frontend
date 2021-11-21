@@ -9,11 +9,17 @@ import Honorables from "./components/Characters/Honorables";
 import Villains from "./components/Characters/Villains";
 import Stinks from "./components/Characters/Stinks";
 import Honorable from "./components/Characters/Honorable";
+import Register from "./components/Regstier";
+
 function App() {
   return (
     <div className="App">
+      {/* <Routes>
+      </Routes> */}
       <Nav />
       <Routes>
+      <Route exact path="/" element={<Register />} />
+
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/character" element={<Characters />} />
         <Route exact path="/character/honorable" element={<Honorables />} />
