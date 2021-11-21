@@ -11,7 +11,7 @@ import Stinks from "./components/Characters/Stinks";
 import Honorable from "./components/Characters/Honorable";
 import Register from "./components/Regstier";
 import Login from "./components/Login";
-
+import Account from "./components/Account";
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Register />} />
       <Route exact path="/login" element={<Login />} />
+      <Route exact path="/account" element={<Account />} />
 
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/character" element={<Characters />} />
