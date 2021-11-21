@@ -10,6 +10,7 @@ import Villains from "./components/Characters/Villains";
 import Stinks from "./components/Characters/Stinks";
 import Honorable from "./components/Characters/Honorable";
 import Register from "./components/Regstier";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Nav />
       <Routes>
       <Route exact path="/" element={<Register />} />
+      <Route exact path="/login" element={<Login />} />
 
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/character" element={<Characters />} />

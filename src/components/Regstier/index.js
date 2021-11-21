@@ -34,7 +34,7 @@ const Register = () => {
           email: email,
           password: password,
         });
-        navigate("/home");
+        navigate("/login");
       } catch (error) {
         console.log(error);
       }
@@ -49,6 +49,10 @@ const Register = () => {
   useEffect(() => {
     getData();
   }, []);
+
+const loginPage =() => {
+  navigate("/login")
+}
 
   return (
     <div>
@@ -73,6 +77,7 @@ const Register = () => {
         />
         <input type="submit" value="Register" />
       </form>
+      <p onClick={loginPage}>Already have an acoount ?</p>
     </div>
   );
 };
