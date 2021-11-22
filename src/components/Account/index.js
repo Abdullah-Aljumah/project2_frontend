@@ -41,6 +41,13 @@ const Account = () => {
     getData();
   };
 
+  const editBio = async (e) => {
+    e.preventDefault();
+    await axios.put(`http://localhost:5000/user/bio/${local.email}`, {
+      bio: edit,
+    });
+    getData();
+  };
   return (
     <div>
       <Nav />
@@ -53,6 +60,11 @@ const Account = () => {
               <input type="text" onChange={(e) => setEdit(e.target.value)} />
             </form>
             <h2>Email: {item.email}</h2>
+            <form>
+              <p>Bio: {item.bio}</p>
+              <input type="submit" value="Edit" onClick={editBio} />
+              <input type="text" onChange={(e) => setEdit(e.target.value)} />
+            </form>
           </div>
         );
       })}
