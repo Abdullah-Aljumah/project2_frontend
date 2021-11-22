@@ -26,10 +26,10 @@ const Register = () => {
 
     if (check) {
       try {
-        localStorage.setItem(
-          "newUser",
-          JSON.stringify({ userName, email, password })
-        );
+        // localStorage.setItem(
+        //   "newUser",
+        //   JSON.stringify({ userName, email, password })
+        // );
         axios.post("http://localhost:5000/user/register", {
           userName: userName,
           email: email,

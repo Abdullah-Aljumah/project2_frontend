@@ -1,27 +1,48 @@
 import axios from "axios";
 import React from "react";
+import Nav from "../Nav";
 import { useState, useEffect } from "react";
 const Account = () => {
   const [account, setAccount] = useState([]);
-  const [email, setEmail] = useState([]);
-  let local = localStorage.getItem("newUser");
+  const [local, setLocal] = useState([]);
 
+  // invoke functions
+
+  // Get data by email
   const getData = async () => {
-      console.log("local",local);
-    setEmail(local);
-    console.log("email", email);
     const item = await axios.get(
-      `http://localhost:5000/user/email/${email.email}`
+      `http://localhost:5000/user/email/${local.email}`
     );
-    console.log("item", item);
+    console.log("item", item.data);
     setAccount(item.data);
-    console.log("account =", account);
   };
+  // Get items from local storage
+  const getLocalStorage = () => {
+    setLocal(JSON.parse(localStorage.getItem("newUser")));
+  };
+  useEffect(() => {
+    getLocalStorage();
+  }, []);
 
   useEffect(() => {
     getData();
-  }, []);
-  return <div></div>;
+  }, [local]);
+
+  return (
+    <div>
+          <Nav />
+      {account.map((item, i) => {
+        return (
+          <div key={i}>
+            <h1>{item.userName}</h1>
+            <h2>{item.email}</h2>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Account;
+
+// console.log("account =", account);

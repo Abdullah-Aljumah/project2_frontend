@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router";
-
+import Nav from "../../Nav";
 const Honorables = () => {
   const navigate = useNavigate();
   const [honorable, setHonorable] = useState([]);
@@ -35,6 +35,8 @@ const Honorables = () => {
   };
   return (
     <div>
+                <Nav />
+
       <h1>Honorable</h1>
 
       <input

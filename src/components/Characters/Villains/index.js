@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import Nav from "../../Nav";
 const Villains = () => {
   const [villains, setVillains] = useState([]);
 
@@ -23,6 +23,8 @@ const Villains = () => {
 
   return (
     <div>
+      <Nav />
+
       <h1>villains</h1>
       {villains.map((item, i) => {
         return (

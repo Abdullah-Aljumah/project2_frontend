@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import ReactPlayer from "react-player/youtube";
 import "./style.css";
+import Nav from "../../Nav";
 const Honorable = () => {
   let name = useParams().name;
   const [character, setCharacter] = useState([]);
@@ -23,6 +24,8 @@ const Honorable = () => {
 
   return (
     <div>
+                <Nav />
+
       {character.map((item, i) => {
         return (
           <div key={i} className='container'>

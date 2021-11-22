@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Nav from "../../Nav";
 const Stinks = () => {
   const [stink, setStink] = useState([]);
 
@@ -22,6 +23,7 @@ const Stinks = () => {
 
   return (
     <div>
+                <Nav />
       <h1>stink</h1>
       {stink.map((item, i) => {
         return (

@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 const Nav = () => {
+  const navigate = useNavigate();
+  const logOut = () => {
+    localStorage.clear();
+    navigate("/");
+  };
   return (
     <div>
       <ul>
@@ -13,6 +19,7 @@ const Nav = () => {
         <Link to="/account">
           <li>Account</li>
         </Link>
+        <li onClick={logOut}>log Out</li>
       </ul>
     </div>
   );
