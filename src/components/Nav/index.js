@@ -19,6 +19,9 @@ const Nav = () => {
         <Link to="/account">
           <li>Account</li>
         </Link>
+        <Link to="/fav">
+          <li>Favorite</li>
+        </Link>
         <li onClick={logOut}>log Out</li>
       </ul>
     </div>

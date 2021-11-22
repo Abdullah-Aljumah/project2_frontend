@@ -39,7 +39,6 @@ const Register = () => {
       let myWindow = window.open("", "", "width=200,height=100");
       myWindow.document.write("<p> email existing</p>");
       myWindow.focus();
-      navigate("/");
     }
   };
 

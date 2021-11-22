@@ -12,6 +12,7 @@ import Honorable from "./components/Characters/Honorable";
 import Register from "./components/Regstier";
 import Login from "./components/Login";
 import Account from "./components/Account";
+import Favorite from "./components/Favorite";
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/character/honorable" element={<Honorables />} />
         <Route exact path="/character/Villains" element={<Villains />} />
         <Route exact path="/character/stink" element={<Stinks />} />
+        <Route exact path="/fav" element={<Favorite />} />
 
         <Route path="/character/name/:name" element={<Honorable />} />
       </Routes>

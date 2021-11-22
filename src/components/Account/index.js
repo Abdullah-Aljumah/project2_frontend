@@ -9,7 +9,6 @@ const Account = () => {
 
   // Get data by email
   const getData = async () => {
-    console.log("get data function");
     const item = await axios.get(
       `http://localhost:5000/user/email/${local.email}`
     );
@@ -35,18 +34,31 @@ const Account = () => {
   // edit userName
   const editName = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/user/name/${local.email}`, {
-      userName: edit,
-    });
-    getData();
+
+    if (edit.length > 0) {
+      await axios.put(`http://localhost:5000/user/name/${local.email}`, {
+        userName: edit,
+      });
+      document.getElementById("userName").value = "";
+      getData();
+      setEdit("");
+    } else {
+      console.log("empty");
+    }
   };
 
   const editBio = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:5000/user/bio/${local.email}`, {
-      bio: edit,
-    });
-    getData();
+    if (edit.length > 0) {
+      await axios.put(`http://localhost:5000/user/bio/${local.email}`, {
+        bio: edit,
+      });
+      document.getElementById("bio").value = "";
+      getData();
+      setEdit("");
+    } else {
+      console.log("empty");
+    }
   };
   return (
     <div>
@@ -57,13 +69,17 @@ const Account = () => {
             <form>
               <h1>Username: {item.userName}</h1>
               <input type="submit" value="Edit" onClick={editName} />
-              <input type="text" onChange={(e) => setEdit(e.target.value)} />
+              <input
+                type="text"
+                onChange={(e) => setEdit(e.target.value)} id="userName"
+               
+              />
             </form>
             <h2>Email: {item.email}</h2>
             <form>
               <p>Bio: {item.bio}</p>
               <input type="submit" value="Edit" onClick={editBio} />
-              <input type="text" onChange={(e) => setEdit(e.target.value)} />
+              <input type="text" onChange={(e) => setEdit(e.target.value)} id="bio" />
             </form>
           </div>
         );

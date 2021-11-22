@@ -15,27 +15,24 @@ const Login = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [email]);
 
   const registerPage = () => {
     navigate("/register");
   };
 
-  const ckeck = (e) => {
+  const check = (e) => {
     e.preventDefault();
-    let ckeck = false;
+    let check = false;
     // eslint-disable-next-line
     users.map((item) => {
       if (item.email === email && item.password === password) {
-        ckeck = true;
+        check = true;
       }
     });
-    if (ckeck) {
+    if (check) {
       try {
-        localStorage.setItem(
-          "newUser",
-          JSON.stringify({ email })
-        );
+        localStorage.setItem("newUser", JSON.stringify({ email }));
         navigate("/home");
       } catch (error) {
         console.log("error ", error);
@@ -49,7 +46,7 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={ckeck}>
+      <form onSubmit={check}>
         <input
           type="text"
           name="email"
