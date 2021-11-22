@@ -1,0 +1,65 @@
+.backgroundDiv {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    width: 57.6%;
+    height: 100%;
+}
+.backgroundDiv img {
+    height: 100%;
+    box-shadow: 0px 2px 80px 14px rgba(0, 0, 0, 0.658);
+
+}
+
+.loginContainer {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+
+}
+.inputVal {
+  display: flex;
+  width: 90%;
+  height: 6vh;
+  margin: auto;
+  margin-bottom: 2%;
+  text-align: center;
+  border: 2px solid rgba(59, 59, 59, 0.418);
+  transition: 0.3s ease-in-out;
+}
+
+.inputVal:hover {
+  transition: 0.3s ease-in-out;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#loginBtn {
+  margin-bottom: 2%;
+  display: block;
+  width: 90%;
+  height: 6vh;
+  margin: auto;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.PRegister {
+  text-align: center;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.iconLogin {
+  text-align: center;
+}
+
+.signinH1 {
+  text-align: center;
+  font-size: 5vh;
+  margin-bottom: 5%;
+}

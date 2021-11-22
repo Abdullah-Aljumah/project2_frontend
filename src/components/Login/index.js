@@ -2,6 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { CgLogIn } from "react-icons/cg";
+
+import "./style.css";
 const Login = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -45,24 +48,44 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={check}>
-        <input
-          type="text"
-          name="email"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input type="submit" value="Login" />
-      </form>
+    <div className="background">
+      <div className="backgroundDiv">
+        <img src="https://i.gifer.com/Az1x.gif" />
+      </div>
+      <div className="loginContainer">
+        <h1 className="iconLogin">
+          <CgLogIn />
+        </h1>
+        <h1 className="signinH1">Sign in </h1>
+        <div className="inputs">
+          <form onSubmit={check}>
+            <input
+              className="inputVal"
+              type="text"
+              name="email"
+              placeholder="Email Address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              className="inputVal"
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="submit"
+              value="Login"
+              id="loginBtn"
+              className="btn btn-primary"
+            />
+          </form>
+        </div>
 
-      <p onClick={registerPage}>Don't have an account ?</p>
+        <p className="PRegister" onClick={registerPage}>
+          Don't have an account ?
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import "./style.css";
+import { RiAccountCircleLine } from "react-icons/ri";
 const Register = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -51,29 +53,46 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={ckeck}>
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input type="submit" value="Register" />
-      </form>
-      <p onClick={loginPage}>Already have an account ?</p>
+    <div className="background">
+      <div className="backgroundDiv">
+        <img src="https://i.gifer.com/Az1x.gif" />
+      </div>
+      <div className="loginContainer">
+        <RiAccountCircleLine className="iconRegister" />
+        <h1 className="signinH1"> Create Account</h1>
+        <form onSubmit={ckeck}>
+          <input
+            className="inputVal"
+            type="text"
+            name="username"
+            placeholder="username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <input
+            className="inputVal"
+            type="email"
+            name="email"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            className="inputVal"
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="submit"
+            value="Register"
+            id="loginBtn"
+            className="btn btn-primary"
+          />
+        </form>
+        <p onClick={loginPage} className="PRegister">
+          Already have an account ?
+        </p>
+      </div>
     </div>
   );
 };
