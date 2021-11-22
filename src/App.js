@@ -1,5 +1,5 @@
 import "./App.css";
-import Nav from "./components/Nav/index";
+// import Nav from "./components/Nav/index";
 // import Router from "router-dom";
 import { Route } from "react-router";
 import Home from "./components/Home";
@@ -19,8 +19,8 @@ function App() {
       {/* <Nav /> */}
 
       <Routes>
-      <Route exact path="/" element={<Register />} />
-      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/register" element={<Register />} />
+      <Route exact path="/" element={<Login />} />
       <Route exact path="/account" element={<Account />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/character" element={<Characters />} />

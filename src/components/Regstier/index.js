@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault();
 
     let check = true;
-        // eslint-disable-next-line
+    // eslint-disable-next-line
     users.map((item) => {
       if (item.email === email) {
         check = false;
@@ -26,16 +26,12 @@ const Register = () => {
 
     if (check) {
       try {
-        // localStorage.setItem(
-        //   "newUser",
-        //   JSON.stringify({ userName, email, password })
-        // );
         axios.post("http://localhost:5000/user/register", {
           userName: userName,
           email: email,
           password: password,
         });
-        navigate("/login");
+        navigate("/");
       } catch (error) {
         console.log(error);
       }
@@ -51,9 +47,9 @@ const Register = () => {
     getData();
   }, []);
 
-const loginPage =() => {
-  navigate("/login")
-}
+  const loginPage = () => {
+    navigate("/");
+  };
 
   return (
     <div>
@@ -78,7 +74,7 @@ const loginPage =() => {
         />
         <input type="submit" value="Register" />
       </form>
-      <p onClick={loginPage}>Already have an acoount ?</p>
+      <p onClick={loginPage}>Already have an account ?</p>
     </div>
   );
 };

@@ -17,8 +17,8 @@ const Login = () => {
     getData();
   }, []);
 
-  const registerPAge = () => {
-    navigate("/");
+  const registerPage = () => {
+    navigate("/register");
   };
 
   const ckeck = (e) => {
@@ -65,7 +65,7 @@ const Login = () => {
         <input type="submit" value="Login" />
       </form>
 
-      <p onClick={registerPAge}>Don't have an account ?</p>
+      <p onClick={registerPage}>Don't have an account ?</p>
     </div>
   );
 };
