@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import "./style.css";
 import { RiAccountCircleLine } from "react-icons/ri";
+import Swal from "sweetalert2";
 const Register = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
@@ -38,9 +39,11 @@ const Register = () => {
         console.log(error);
       }
     } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> email existing</p>");
-      myWindow.focus();
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Email already taken!",
+      })
     }
   };
 
@@ -55,7 +58,7 @@ const Register = () => {
   return (
     <div className="background">
       <div className="backgroundDiv">
-        <img src="https://i.gifer.com/Az1x.gif" />
+        <img src="https://i.gifer.com/Az1x.gif"  alt="gif background" />
       </div>
       <div className="loginContainer">
         <RiAccountCircleLine className="iconRegister" />

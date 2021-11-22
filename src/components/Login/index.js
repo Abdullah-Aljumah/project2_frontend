@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { CgLogIn } from "react-icons/cg";
-
+import Swal from "sweetalert2";
 import "./style.css";
 const Login = () => {
   const navigate = useNavigate();
@@ -36,21 +36,32 @@ const Login = () => {
     if (check) {
       try {
         localStorage.setItem("newUser", JSON.stringify({ email }));
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Success',
+          showConfirmButton: false,
+          timer: 1500
+        })
         navigate("/home");
       } catch (error) {
         console.log("error ", error);
       }
     } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> Wrong email or password </p>");
-      myWindow.focus();
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Wrong email or password',
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
+    
   };
 
   return (
     <div className="background">
       <div className="backgroundDiv">
-        <img src="https://i.gifer.com/Az1x.gif" />
+        <img src="https://i.gifer.com/Az1x.gif" alt="gif background"/>
       </div>
       <div className="loginContainer">
         <h1 className="iconLogin">
