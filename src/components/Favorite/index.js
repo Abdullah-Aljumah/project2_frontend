@@ -7,34 +7,36 @@ const Favorite = () => {
   const [local, setLocal] = useState([]);
   const [character, setCharacter] = useState([]);
 
-  // character
-  const getCharacter = async () => {
-    const item = await axios.get("http://localhost:5000/character");
-    // console.log("item character =", item.data);
-    setCharacter(item.data);
-    console.log("character = ", character);
+  const getLocalStorage = async () => {
+    const item = await JSON.parse(localStorage.getItem("newUser"));
+    console.log("get localStorage");
+    setLocal(item);
   };
 
-  // Get data by email
   const getData = async () => {
     const item = await axios.get(
       `http://localhost:5000/user/email/${local.email}`
     );
-    // console.log("item.data = ",item.data);
+    console.log("get Data");
     setAccount(item.data);
-    console.log("account =", account);
+    // console.log("account =", account);
+    // console.log("account.favorite =", account[0].favorite[0]);
   };
 
-  // Get items from local storage
-  const getLocalStorage = () => {
-    setLocal(JSON.parse(localStorage.getItem("newUser")));
-    // console.log("local =", local);
+  // character
+  const getCharacter = async () => {
+    const item = await axios.get("http://localhost:5000/character");
+    console.log("get character");
+    setCharacter(item.data);
   };
+
+  // Get data by email
+
+  // Get items from local storage
 
   // invoke functions getLocalStorage
   useEffect(() => {
     getLocalStorage();
-    getCharacter();
     // eslint-disable-next-line
   }, []);
 
@@ -44,12 +46,31 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, [local]);
 
+  useEffect(() => {
+    getCharacter();
+    console.log("local", local);
+    console.log("account", account);
+    console.log("character", character);
+    // console.log("character.name", character[0].name);
+  }, [account]);
+
   return (
     <div>
       <Nav />
       <p>Favorite</p>
-      {account.map((item, i) => {
-        return item.favorite.includes(character.name);
+      {/* {account.map((item, i) => {
+        return item.name.includes(account);
+      })} */}
+
+      {account[0].favorite.map((item, i) => {
+        if (item.includes(character[i].name)) {
+          return (
+            <div>
+              {" "}
+              <h1>{character[i].name}</h1>{" "}
+            </div>
+          );
+        }
       })}
     </div>
   );

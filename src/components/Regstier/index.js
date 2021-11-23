@@ -22,7 +22,7 @@ const Register = () => {
     let check = true;
     // eslint-disable-next-line
     users.map((item) => {
-      if (item.email === email || item.userName == userName) {
+      if (item.email === email || item.userName === userName) {
         check = false;
       }
     });
