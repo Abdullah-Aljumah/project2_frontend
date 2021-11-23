@@ -8,10 +8,21 @@ const Honorables = () => {
   const navigate = useNavigate();
   const [honorable, setHonorable] = useState([]);
   const [resSearch, setResSearch] = useState("");
+  const [local, setLocal] = useState("");
   // const [loading, setLoading] = useState(true);
   useEffect(() => {
     getHonorable();
     // eslint-disable-next-line
+  }, []);
+
+  const getLocalStorage = async () => {
+    const item = await JSON.parse(localStorage.getItem("newUser"));
+    setLocal(item);
+    console.log(local);
+  };
+
+  useEffect(() => {
+    getLocalStorage();
   }, []);
 
   // get all data
@@ -33,9 +44,15 @@ const Honorables = () => {
   const characterInfo = (name) => {
     navigate(`/character/name/${name}`);
   };
+
+  const addToFav = (name) => {
+    // console.log(name);
+    console.log(`http://localhost:5000/user/fav/${local.email}/${name}`);
+    axios.put(`http://localhost:5000/user/fav/${local.email}/${name}`);
+  };
   return (
     <div>
-                <Nav />
+      <Nav />
 
       <h1>Honorable</h1>
 
@@ -47,7 +64,7 @@ const Honorables = () => {
         }}
       />
       {honorable
-       // eslint-disable-next-line
+        // eslint-disable-next-line
         .filter((item) => {
           if (resSearch === "") {
             return item;
@@ -68,9 +85,8 @@ const Honorables = () => {
                     alt="character face"
                   />
                   <h1>{items.name}</h1>
-      
                 </li>{" "}
-                <button>Favorite</button>
+                <button onClick={() => addToFav(items.name)}>Favorite</button>
               </ul>
             </div>
           );

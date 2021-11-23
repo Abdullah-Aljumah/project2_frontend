@@ -62,7 +62,7 @@ const Favorite = () => {
         return item.name.includes(account);
       })} */}
 
-      {account[0].favorite.map((item, i) => {
+      {account.length && account[0].favorite.map((item, i) => {
         if (item.includes(character[i].name)) {
           return (
             <div>
