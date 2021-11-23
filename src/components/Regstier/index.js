@@ -22,7 +22,7 @@ const Register = () => {
     let check = true;
     // eslint-disable-next-line
     users.map((item) => {
-      if (item.email === email) {
+      if (item.email === email || item.userName == userName) {
         check = false;
       }
     });
@@ -40,10 +40,10 @@ const Register = () => {
       }
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: "Email already taken!",
-      })
+        icon: "error",
+        title: "Oops...",
+        text: "Username or email already taken!",
+      });
     }
   };
 
@@ -58,7 +58,7 @@ const Register = () => {
   return (
     <div className="background">
       <div className="backgroundDiv">
-        <img src="https://i.gifer.com/Az1x.gif"  alt="gif background" />
+        <img src="https://i.gifer.com/Az1x.gif" alt="gif background" />
       </div>
       <div className="loginContainer">
         <RiAccountCircleLine className="iconRegister" />

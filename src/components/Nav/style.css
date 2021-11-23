@@ -1,0 +1,33 @@
+.containerNav {
+  border-bottom: 1px solid rgba(83, 83, 83, 0.589);
+  height: max-content;
+}
+
+.ulNav {
+  padding: 2%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  color: black;
+}
+
+.ulNav li {
+  text-decoration: none;
+  text-align: center;
+  border-radius: 0.7rem;
+}
+
+.ulNav li:hover {
+  /* background-color: rgba(255, 0, 0, 0.568); */
+}
+
+.h2Nav {
+  font-size: 3.5vh;
+}
+
+.linkNav {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-size: 3vh;
+}
