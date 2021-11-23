@@ -46,9 +46,13 @@ const Honorables = () => {
   };
 
   const addToFav = (name) => {
-    // console.log(name);
-    console.log(`http://localhost:5000/user/fav/${local.email}/${name}`);
     axios.put(`http://localhost:5000/user/fav/${local.email}/${name}`);
+  };
+
+  const removeFromFav = (name) => {
+    console.log(name);
+    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${name}`);
+
   };
   return (
     <div>
@@ -87,6 +91,9 @@ const Honorables = () => {
                   <h1>{items.name}</h1>
                 </li>{" "}
                 <button onClick={() => addToFav(items.name)}>Favorite</button>
+                <button onClick={() => removeFromFav(items.name)}>
+                  Remove
+                </button>
               </ul>
             </div>
           );
