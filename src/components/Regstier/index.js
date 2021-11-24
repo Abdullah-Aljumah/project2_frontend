@@ -70,6 +70,7 @@ const Register = () => {
             name="username"
             placeholder="username"
             onChange={(e) => setUserName(e.target.value)}
+            required
           />
           <input
             className="inputVal"
@@ -77,6 +78,7 @@ const Register = () => {
             name="email"
             placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             className="inputVal"
@@ -84,6 +86,7 @@ const Register = () => {
             name="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <input
             type="submit"

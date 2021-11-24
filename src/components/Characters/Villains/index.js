@@ -31,9 +31,10 @@ const Villains = () => {
           <div>
             <ul>
               <li key={i}>
-                <h1>{item.name}</h1>
-                <p>{item.desc}</p>
+
                 <img src={item.img} alt="character face" />
+                <h1>{item.name}</h1>
+                <p>{item.price}</p>
                 {/* <video src={item.video} /> */}
               </li>
             </ul>

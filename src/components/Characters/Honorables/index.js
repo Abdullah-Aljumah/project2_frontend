@@ -16,18 +16,17 @@ const Honorables = () => {
     // eslint-disable-next-line
   }, []);
 
-  const getLocalStorage =  () => {
-    const item =  JSON.parse(localStorage.getItem("newUser"));
+  const getLocalStorage = () => {
+    const item = JSON.parse(localStorage.getItem("newUser"));
     setLocal(item);
     // console.log(local);
   };
 
   useEffect(() => {
-    if(JSON.parse(localStorage.getItem("newUser"))) {
+    if (JSON.parse(localStorage.getItem("newUser"))) {
       getDataEmail();
     }
     getLocalStorage();
-
     // eslint-disable-next-line
   }, []);
 
@@ -38,8 +37,6 @@ const Honorables = () => {
         "http://localhost:5000/character/honorbale"
       );
       setHonorable(items.data);
-      // console.log(honorable);
-      // setLoading(false);
     } catch (error) {
       console.log("error on get honorable", error);
     }
@@ -51,52 +48,40 @@ const Honorables = () => {
   };
 
   const getDataEmail = async () => {
-    const user =  JSON.parse(localStorage.getItem("newUser"));
+    const user = JSON.parse(localStorage.getItem("newUser"));
     const item = await axios.get(
       `http://localhost:5000/user/favorite/${user.email}`
     );
-    console.log("item", item.data);
     setRemAdd(item.data);
+    
   };
-
-  // useEffect(() => {
-  // }, []);
 
   // HEEEEEEEEEEEEEEEEEEEEEEEERE
   const removeOrAdd = async (id) => {
-
     let test = [];
-    
+
     remAdd.forEach((item) => {
       test.push(item._id);
     });
-    // console.log("test = ", test);
 
     if (test.includes(id)) {
-      console.log("Remove");
+
+      document.getElementById(`${id}`).innerHTML = "add";
+
       await axios.put(
         `http://localhost:5000/user/removeFav/${local.email}/${id}`
       );
     } else {
-      console.log("Add");
+
+      document.getElementById(`${id}`).innerHTML = "remove";
+
       await axios.put(
         `http://localhost:5000/user/favorite/${local.email}/${id}`
       );
     }
     test = [];
-    console.log("test clear", test);
     getDataEmail();
   };
-
-  // const addToFav = (id) => {
-  //   console.log("add", id);
-  //   axios.put(`http://localhost:5000/user/favorite/${local.email}/${id}`);
-  // };
-
-  // const removeFromFav = (id) => {
-  //   console.log("remove ", id);
-  //   axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
-  // };
 
   return (
     <div>
@@ -133,10 +118,11 @@ const Honorables = () => {
                     alt="character face"
                   />
                   <h1>{items.name}</h1>
-                  <p>{items._id}</p>
+                  <p>{items.price}</p>
                 </li>{" "}
-                <button onClick={() => removeOrAdd(items._id)}>Favorite</button>
-                {/* <button onClick={() => removeFromFav(items._id)}>Remove</button> */}
+                <button id={items._id} onClick={() => removeOrAdd(items._id)}>
+                  Favorite
+                </button>
               </ul>
             </div>
           );

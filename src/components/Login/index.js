@@ -76,6 +76,7 @@ const Login = () => {
               name="email"
               placeholder="Email Address"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <input
               className="inputVal"
@@ -83,6 +84,7 @@ const Login = () => {
               name="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <input
               type="submit"

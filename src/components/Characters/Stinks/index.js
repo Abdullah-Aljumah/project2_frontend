@@ -23,16 +23,17 @@ const Stinks = () => {
 
   return (
     <div>
-                <Nav />
+      <Nav />
       <h1>stink</h1>
       {stink.map((item, i) => {
         return (
-          <div  key={i}>
+          <div key={i}>
             <ul>
               <li>
-                <h1>{item.name}</h1>
-                <p>{item.desc}</p>
                 <img src={item.img} alt="character face" />
+                <h1>{item.name}</h1>
+                <p>{item.price}</p>
+
                 {/* <video src={item.video} /> */}
               </li>
             </ul>
