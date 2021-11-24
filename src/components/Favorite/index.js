@@ -34,11 +34,15 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, [local]);
 
-
-  const itemInfo =(name) => {
+  const itemInfo = (name) => {
     console.log(name);
     navigate(`/character/name/${name}`);
-  }
+  };
+
+  const removeFavorite = (id) => {
+    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
+    getLocalStorage();
+  };
   return (
     <div>
       <Nav />
@@ -46,10 +50,13 @@ const Favorite = () => {
       {account.length &&
         account.map((item, i) => {
           return (
-            <div onClick={()=>itemInfo(item.name)}>
-              {" "}
-              <h1>{item.name}</h1>
-              <img src={item.img} alt="character" />
+            <div>
+              <div onClick={() => itemInfo(item.name)}>
+                {" "}
+                <h1>{item.name}</h1>
+                <img src={item.img} alt="character" />
+              </div>
+              <button onClick={() => removeFavorite(item._id)}> Remove</button>
             </div>
           );
         })}
