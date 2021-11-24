@@ -7,19 +7,19 @@ const Favorite = () => {
   const navigate = useNavigate();
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
-  // const [character, setCharacter] = useState([]);
 
+  // Get email from localStorage
   const getLocalStorage = async () => {
     const item = await JSON.parse(localStorage.getItem("newUser"));
     setLocal(item);
   };
 
+  // Get info the character base on email from backend
   const getData = async () => {
     const item = await axios.get(
       `http://localhost:5000/user/favorite/${local.email}`
     );
     setAccount(item.data);
-    console.log(account);
   };
 
   // invoke functions getLocalStorage
@@ -28,17 +28,20 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, []);
 
-  // invoke functions getData
+  // invoke functions getData 
   useEffect(() => {
     getData();
     // eslint-disable-next-line
   }, [local]);
 
+  // Navigate to character info 
   const itemInfo = (name) => {
     console.log(name);
     navigate(`/character/name/${name}`);
   };
 
+
+  // Remove from favorite
   const removeFavorite = (id) => {
     axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
     getLocalStorage();
