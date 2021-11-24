@@ -34,6 +34,11 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, [local]);
 
+
+  const itemInfo =(name) => {
+    console.log(name);
+    navigate(`/character/name/${name}`);
+  }
   return (
     <div>
       <Nav />
@@ -41,7 +46,7 @@ const Favorite = () => {
       {account.length &&
         account.map((item, i) => {
           return (
-            <div>
+            <div onClick={()=>itemInfo(item.name)}>
               {" "}
               <h1>{item.name}</h1>
               <img src={item.img} alt="character" />

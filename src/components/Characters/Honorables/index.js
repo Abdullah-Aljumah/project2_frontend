@@ -23,6 +23,7 @@ const Honorables = () => {
 
   useEffect(() => {
     getLocalStorage();
+    // eslint-disable-next-line
   }, []);
 
   // get all data
@@ -32,6 +33,7 @@ const Honorables = () => {
         "http://localhost:5000/character/honorbale"
       );
       setHonorable(items.data);
+      console.log(honorable);
       // setLoading(false);
     } catch (error) {
       console.log("error on get honorable", error);
@@ -45,13 +47,14 @@ const Honorables = () => {
     navigate(`/character/name/${name}`);
   };
 
-  const addToFav = (name) => {
-    axios.put(`http://localhost:5000/user/fav/${local.email}/${name}`);
+  const addToFav = (id) => {
+    console.log(id);
+    axios.put(`http://localhost:5000/user/favorite/${local.email}/${id}`);
   };
 
-  const removeFromFav = (name) => {
-    console.log(name);
-    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${name}`);
+  const removeFromFav = (id) => {
+    console.log(id);
+    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
 
   };
   return (
@@ -89,9 +92,10 @@ const Honorables = () => {
                     alt="character face"
                   />
                   <h1>{items.name}</h1>
+                  <p>{items._id}</p>
                 </li>{" "}
-                <button onClick={() => addToFav(items.name)}>Favorite</button>
-                <button onClick={() => removeFromFav(items.name)}>
+                <button onClick={() => addToFav(items._id)}>Favorite</button>
+                <button onClick={() => removeFromFav(items._id)}>
                   Remove
                 </button>
               </ul>
