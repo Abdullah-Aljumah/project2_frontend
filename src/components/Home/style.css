@@ -1,7 +1,7 @@
 .containerHome {
-  background: rgb(0, 0, 0, 0.4);
+  background: rgb(0, 0, 0, 0.45);
   color: white;
-  height: 40vh;
+  height: 50vh;
 }
 
 .backgroundHome {
@@ -10,13 +10,38 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 100vh;
 }
 
+.homeContent {
+  margin-top: 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pWelcoming {
+  font-size: 14px;
+  color: rgb(212, 219, 226);
+}
+
+#getStart {
+  margin-top: 1%;
+  border: 1px solid rgba(0, 0, 0, 0.336);
+  width: 22rem;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 3rem;
+  padding: 5px;
+}
+
+#getStart:hover {
+  transition: 0.5s ease-in-out;
+  transform: scale(1.05);
+}
 .welcoming {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .ulCategory {
@@ -35,11 +60,12 @@
   -moz-box-shadow: 0px 0px 7px 6px rgba(0, 0, 0, 0.62);
 }
 
+
+
 .categoryHome {
   position: relative;
   width: 50vh;
   cursor: pointer;
-
 }
 
 .categoryHome img {
@@ -62,11 +88,8 @@
   opacity: 0;
 }
 
-
 .categoryHome:hover .textCategory {
   visibility: visible;
   opacity: 1;
   height: 100%;
 }
-
-

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router";
 import Nav from "../../Nav";
+
 const Honorables = () => {
   const navigate = useNavigate();
   const [honorable, setHonorable] = useState([]);
@@ -149,13 +150,13 @@ const Honorables = () => {
                     <p className="priceCard">{items.price}</p>
                   </li>{" "}
                   <div className="divBtn">
-                  <button
-                    id={items._id}
-                    onClick={() => removeOrAdd(items._id)}
-                    className="btn"
-                  >
-                    <span> Add </span>
-                  </button>
+                    <button
+                      id={items._id}
+                      onClick={() => removeOrAdd(items._id)}
+                      className="btn"
+                    >
+                      <span> Add </span>
+                    </button>
                   </div>
                 </ul>
               </div>
