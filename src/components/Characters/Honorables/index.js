@@ -10,8 +10,7 @@ const Honorables = () => {
   const [resSearch, setResSearch] = useState("");
   const [local, setLocal] = useState("");
   const [remAdd, setRemAdd] = useState([]);
-  // const [account, setAccount] = useState([]);
-  // const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     getHonorable();
     // eslint-disable-next-line
@@ -38,7 +37,6 @@ const Honorables = () => {
         "http://localhost:5000/character/honorbale"
       );
       setHonorable(items.data);
-      // console.log(honorable);
     } catch (error) {
       console.log("error on get honorable", error);
     }
@@ -85,11 +83,9 @@ const Honorables = () => {
   };
 
   const test1 = async () => {
-    // console.log("here");
     let test = [];
 
     remAdd.forEach((item) => {
-      // console.log("forEach");
       test.push(item._id);
     });
     console.log("test", test);
@@ -152,6 +148,7 @@ const Honorables = () => {
                     <h3 className="nameGame">{items.game}</h3>
                     <p className="priceCard">{items.price}</p>
                   </li>{" "}
+                  <div className="divBtn">
                   <button
                     id={items._id}
                     onClick={() => removeOrAdd(items._id)}
@@ -159,6 +156,7 @@ const Honorables = () => {
                   >
                     <span> Add </span>
                   </button>
+                  </div>
                 </ul>
               </div>
             );
