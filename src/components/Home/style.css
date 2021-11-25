@@ -47,7 +47,6 @@
 }
 
 .textCategory {
-  /* box-sizing: border-box; */
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -55,9 +54,6 @@
   color: white;
   border-radius: 50%;
   text-align: center;
-  /* align-content: center;
-  align-items: center;
-  align-self: center; */
   padding-top: 35%;
 }
 
@@ -65,8 +61,12 @@
   visibility: none;
   opacity: 0;
 }
+
+
 .categoryHome:hover .textCategory {
   visibility: visible;
   opacity: 1;
   height: 100%;
 }
+
+

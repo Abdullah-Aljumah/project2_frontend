@@ -82,7 +82,6 @@ const Honorables = () => {
     test = [];
     getDataEmail();
     getLocalStorage();
-
   };
 
   const test1 = async () => {
@@ -96,50 +95,29 @@ const Honorables = () => {
     console.log("test", test);
 
     if (test.length > 0) {
-      console.log(" > 0");
       test.map((item) => {
-        // console.log(item);
-        document.getElementById(`${item}`).innerHTML = "Remove";
-      }
-        );
+        return (document.getElementById(`${item}`).innerHTML = "Remove");
+      });
     }
-    test = []
+    test = [];
   };
 
   useEffect(() => {
-    test1()
-  }, [remAdd])
-  // if .includes(id)) {
-  //   document.getElementById(`${id}`).innerHTML = "Add";
-
-  //   await axios.put(
-  //     `http://localhost:5000/user/removeFav/${local.email}/${id}`
-  //   );
-  // } else {
-  //   document.getElementById(`${id}`).innerHTML = "Remove";
-
-  //   await axios.put(
-  //     `http://localhost:5000/user/favorite/${local.email}/${id}`
-  //   );
-  // }
-
-  useEffect(() => {
-    if (honorable.length > 1) {
-      // removeOrAdd()
-    }
-  }, []);
+    test1();
+    // eslint-disable-next-line
+  }, [remAdd]);
 
   return (
     <div>
       <Nav />
 
-      <h1>Honorables</h1>
+      <h1 className="firstWord">Honorables</h1>
       <div className="divSearchBar">
         <input
           className="searchBar"
           type="text"
           name="search"
-          placeholder="Search..."
+          placeholder="Search for character"
           onChange={(e) => {
             setResSearch(e.target.value);
           }}
@@ -171,7 +149,8 @@ const Honorables = () => {
                       alt="character face"
                     />
                     <h1 className="characterName">{items.name}</h1>
-                    <p>{items.price}</p>
+                    <h3 className="nameGame">{items.game}</h3>
+                    <p className="priceCard">{items.price}</p>
                   </li>{" "}
                   <button
                     id={items._id}
