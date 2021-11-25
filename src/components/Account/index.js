@@ -6,7 +6,10 @@ const Account = () => {
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
   const [edit, setEdit] = useState("");
-
+  const [showHide, setShowHide] = useState(false);
+  const [showHide2, setShowHide2] = useState(false);
+  const [btn1, setBtn1] = useState(true);
+  const [btn2, setBtn2] = useState(true);
   // Get data by email
   const getData = async () => {
     const item = await axios.get(
@@ -45,6 +48,8 @@ const Account = () => {
     } else {
       console.log("empty");
     }
+    setShowHide(!showHide);
+    setBtn1(true);
   };
 
   const editBio = async (e) => {
@@ -59,6 +64,18 @@ const Account = () => {
     } else {
       console.log("empty");
     }
+    setShowHide2(!showHide2);
+    setBtn2(true);
+  };
+
+  const hide = () => {
+    setShowHide(!showHide);
+    setBtn1(false);
+  };
+
+  const show = () => {
+    setShowHide2(!showHide2);
+    setBtn2(false);
   };
   return (
     <div>
@@ -68,18 +85,61 @@ const Account = () => {
           <div key={i}>
             <form>
               <h1>Username: {item.userName}</h1>
-              <input type="submit" value="Edit" onClick={editName} />
-              <input
-                type="text"
-                onChange={(e) => setEdit(e.target.value)} id="userName"
-               
-              />
+              <div>
+                {btn1 ? (
+                  <input
+                    type="button"
+                    value="Edit Username"
+                    onClick={hide}
+                  ></input>
+                ) : (
+                  <p></p>
+                )}
+              </div>
+              <div className="divBtnName">
+                {showHide ? (
+                  <div>
+                    <input
+                      type="submit"
+                      value="Submit"
+                      onClick={editName}
+                      className="userBtn"
+                    />
+                    <input
+                      type="text"
+                      onChange={(e) => setEdit(e.target.value)}
+                      id="userName"
+                    />
+                  </div>
+                ) : (
+                  <p></p>
+                )}
+              </div>
             </form>
             <h2>Email: {item.email}</h2>
             <form>
               <p>Bio: {item.bio}</p>
-              <input type="submit" value="Edit" onClick={editBio} />
-              <input type="text" onChange={(e) => setEdit(e.target.value)} id="bio" />
+              <div>
+                {btn2 ? (
+                  <div>
+                    <input type="button" value="Edit Bio" onClick={show} />
+                  </div>
+                ) : (
+                  <p></p>
+                )}
+              </div>
+              {showHide2 ? (
+                <div>
+                  <input type="submit" value="Submit" onClick={editBio} />
+                  <input
+                    type="text"
+                    onChange={(e) => setEdit(e.target.value)}
+                    id="bio"
+                  />
+                </div>
+              ) : (
+                <p></p>
+              )}
             </form>
           </div>
         );
