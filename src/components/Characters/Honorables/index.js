@@ -11,6 +11,7 @@ const Honorables = () => {
   const [resSearch, setResSearch] = useState("");
   const [local, setLocal] = useState("");
   const [remAdd, setRemAdd] = useState([]);
+  // const [addOrRemove, setAddOrRemove] = useState(true)
 
   useEffect(() => {
     getHonorable();
@@ -89,11 +90,13 @@ const Honorables = () => {
     remAdd.forEach((item) => {
       test.push(item._id);
     });
-    console.log("test", test);
-
+    
     if (test.length > 0) {
+      // eslint-disable-next-line
       test.map((item) => {
-        return (document.getElementById(`${item}`).innerHTML = "Remove");
+        if (document.getElementById(`${item}`) != null) {
+          document.getElementById(`${item}`).innerHTML = "Remove";
+        }
       });
     }
     test = [];
@@ -155,7 +158,7 @@ const Honorables = () => {
                       onClick={() => removeOrAdd(items._id)}
                       className="btn"
                     >
-                      <span> Add </span>
+                      <span>Add </span>
                     </button>
                   </div>
                 </ul>
