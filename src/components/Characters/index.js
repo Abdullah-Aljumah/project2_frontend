@@ -9,7 +9,7 @@ const Characters = () => {
       <ul>
         <Link to="/character/honorable">
           <li>
-            <h1>Honorable</h1>
+            <h1>Honorables</h1>
           </li> 
         </Link> 
         <Link to="/character/Villains">
@@ -21,7 +21,7 @@ const Characters = () => {
         <Link to="/character/Stink">
           <li>
             {" "}
-            <h1>Stink</h1>
+            <h1>Stinks</h1>
           </li>
         </Link>
       </ul>

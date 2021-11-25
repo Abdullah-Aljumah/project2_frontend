@@ -6,6 +6,7 @@ import "./style.css";
 // import { VscAccount } from "react-icons/vsc";
 // import { BiCategoryAlt } from "react-icons/bi";
 // import { MdFavoriteBorder } from "react-icons/md";
+import { BsCart4 } from "react-icons/bs";
 
 import { FiLogOut } from "react-icons/fi";
 const Nav = () => {
@@ -28,15 +29,17 @@ const Nav = () => {
             <h2 className="h2Nav">Characters</h2>
           </li>
         </Link>
-       
-        <Link to="/fav" className="linkNav">
-          <li>
-            <h2 className="h2Nav">Favorite</h2>
-          </li>
-        </Link>
+
         <Link to="/account" className="linkNav">
           <li>
             <h2 className="h2Nav">Account</h2>
+          </li>
+        </Link>
+        <Link to="/fav" className="linkNav">
+          <li>
+            <h2 className="h2Nav">
+              <BsCart4 />
+            </h2>
           </li>
         </Link>
         <li onClick={logOut} className="linkNav">

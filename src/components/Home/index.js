@@ -1,7 +1,20 @@
 import React from "react";
 import Nav from "../Nav";
 import "./style.css";
+import { useNavigate } from "react-router";
 const Home = () => {
+  const navigate = useNavigate()
+  const navToHonorbale = () => {
+    navigate("/character/honorable")
+  }
+
+  const navToVillains = () => {
+    navigate("/character/Villains")
+  }
+
+  const navToStinks =() => {
+    navigate("/character/Stink")
+  }
   return (
     <div className="backgroundHome">
       <div className="containerHome">
@@ -20,7 +33,21 @@ const Home = () => {
               src="https://c.wallhere.com/photos/66/a2/artwork_dark_Venom-1476791.jpg!d"
               alt="villains"
             />
-            <div className="textCategory">
+            <div className="textCategory" onClick={navToHonorbale}>
+              {" "}
+              <h2 className="h2Category" > Honorables </h2>
+            </div>
+          </div>
+          <div></div>
+        </li>
+        <li className="categoryLiHome">
+          <div className="categoryHome">
+            <img
+              className="categotyHome"
+              src="https://c.wallhere.com/photos/66/a2/artwork_dark_Venom-1476791.jpg!d"
+              alt="villains"
+            />
+            <div className="textCategory" onClick={navToVillains}>
               {" "}
               <h2 className="h2Category"> Villains </h2>
             </div>
@@ -34,23 +61,9 @@ const Home = () => {
               src="https://c.wallhere.com/photos/66/a2/artwork_dark_Venom-1476791.jpg!d"
               alt="villains"
             />
-            <div className="textCategory">
+            <div className="textCategory"  onClick={navToStinks}>
               {" "}
-              <h2 className="h2Category"> Villains </h2>
-            </div>
-          </div>
-          <div></div>
-        </li>
-        <li className="categoryLiHome">
-          <div className="categoryHome">
-            <img
-              className="categotyHome"
-              src="https://c.wallhere.com/photos/66/a2/artwork_dark_Venom-1476791.jpg!d"
-              alt="villains"
-            />
-            <div className="textCategory">
-              {" "}
-              <h2 className="h2Category"> Villains </h2>
+              <h2 className="h2Category"> Stinks </h2>
             </div>
           </div>
         </li>

@@ -28,18 +28,17 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, []);
 
-  // invoke functions getData 
+  // invoke functions getData
   useEffect(() => {
     getData();
     // eslint-disable-next-line
   }, [local]);
 
-  // Navigate to character info 
+  // Navigate to character info
   const itemInfo = (name) => {
     console.log(name);
     navigate(`/character/name/${name}`);
   };
-
 
   // Remove from favorite
   const removeFavorite = (id) => {
