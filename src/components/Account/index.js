@@ -122,7 +122,7 @@ const Account = () => {
               <div>
                 {btn2 ? (
                   <div>
-                    <input type="button" value="Edit Bio" onClick={show} />
+                    <input type="button" value="Edit Bioa" onClick={show} />
                   </div>
                 ) : (
                   <p></p>
