@@ -155,9 +155,9 @@ const Honorables = () => {
                   <button
                     id={items._id}
                     onClick={() => removeOrAdd(items._id)}
-                    className="buttonFav btn btn-dark"
+                    className="btn"
                   >
-                    Add
+                    <span> Add </span>
                   </button>
                 </ul>
               </div>

@@ -2,16 +2,18 @@
   width: 100%;
   height: 65vh;
   transition: 0.4s ease-in-out;
+  border-radius: 3% 3% 0 0;
+  filter: grayscale(30%);
+}
+
+.imageCharacter:hover {
+  transition: 0.4s ease-in-out;
+  filter: grayscale(0%);
 }
 
 .firstWord {
   text-align: center;
   margin: 1.5% 0%;
-}
-
-.imageCharacter:hover {
-  transition: 0.4s ease-in-out;
-  filter: grayscale(100%);
 }
 
 .contaienrCards {
@@ -29,11 +31,21 @@
   width: 75%;
   font-size: 10px;
   list-style-type: none;
-  box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   background-color: rgba(172, 169, 169, 0.151);
   margin-top: 10%;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 3%;
+}
+
+.ulCards:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 1);
 }
 /*End ul */
 
@@ -41,18 +53,10 @@
 .liCards {
   width: 100%;
   font-size: 20px;
-  /* text-align: center; */
+  text-align: center;
   cursor: pointer;
 }
 /* End li */
-
-/* Button */
-.buttonFav {
-  width: 100px;
-  margin-bottom: 4%;
-  margin-left: 35.5%;
-}
-/* End button  */
 
 /* Search Bar */
 .searchBar {
@@ -90,4 +94,52 @@
   margin-left: 3%;
   /* color: gray; */
 }
+
+/* Button */
+.buttonFav {
+ 
+}
+#divBtn {
+  /* background-color:#42a5f5; */
+  /* padding-bottom: 50px; */
+}
+
+.btn {
+  
+  text-align: center;
+  display: inline-block;
+  padding: 15px 40px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position:relative;
+  overflow:hidden;
+  margin: 0 20px;
+  background-color: rgba(0, 38, 161, 0.63);
+  margin-left: 35%;
+  margin-bottom: 4%;
+  width: 125px;
+  font-size: 15px;
+}
+
+
+.btn:before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background : rgb(255, 255, 255);
+  left: -55px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all .3s;
+  opacity: 0.3;
+
+}
+
+.btn:hover:before {
+  left:95%;
+}
+/* End button  */
+
 /* End info card */
