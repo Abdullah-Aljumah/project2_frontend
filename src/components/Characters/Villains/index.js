@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router";
 import Nav from "../../Nav";
+import Footer from "../../Footer";
 
 const Villains = () => {
   const navigate = useNavigate();
@@ -164,6 +165,8 @@ const Villains = () => {
             );
           })}
       </div>
+      <Footer />
+
     </div>
   );
 };

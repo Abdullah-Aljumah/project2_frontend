@@ -16,9 +16,20 @@ const Nav = () => {
     navigate("/");
   };
 
+  const navHome = () => {
+    navigate("/home");
+  };
+
   return (
     <div className="containerNav">
       <ul className="ulNav">
+        <li>
+          {" "}
+          <h1 onClick={navHome} className="logo">
+            {" "}
+            GOLD CARDS{" "}
+          </h1>
+        </li>
         <Link to="/home" className="linkNav">
           <li>
             <h2 className="h2Nav">Home</h2>

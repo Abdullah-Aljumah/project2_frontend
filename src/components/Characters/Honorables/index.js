@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./style.css";
+import Footer from "../../Footer";
 import { useNavigate } from "react-router";
 import Nav from "../../Nav";
 
@@ -108,7 +109,7 @@ const Honorables = () => {
   }, [remAdd]);
 
   return (
-    <div>
+    <div className="baackChar2">
       <Nav />
 
       <h1 className="firstWord">Honorables</h1>
@@ -166,6 +167,7 @@ const Honorables = () => {
             );
           })}
       </div>
+      <Footer />
     </div>
   );
 };

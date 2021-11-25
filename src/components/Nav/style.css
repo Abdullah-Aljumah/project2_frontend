@@ -1,7 +1,7 @@
 .containerNav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.301);
   height: max-content;
-  box-shadow: 0px 0px 8px 1px rgba(0,0,0,1); 
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 1);
 }
 
 .ulNav {
@@ -30,7 +30,16 @@
 
 .linkNav {
   text-decoration: none;
-  color: black;
+  color: white;
   cursor: pointer;
   font-size: 3vh;
 }
+
+.logo {
+  font-size: 4.5vh;
+  background-color: transparent;
+  color: rgba(179, 149, 51, 0.945);
+  font-family: 'Lucida Handwriting';
+  cursor: pointer;
+}
+

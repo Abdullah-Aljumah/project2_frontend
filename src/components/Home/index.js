@@ -7,16 +7,16 @@ import { BsCart4 } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import Footer from "../Footer";
+
 const Home = () => {
   const [account, setAccount] = useState("");
   const [local, setLocal] = useState([]);
 
   const getData = async () => {
-
     const item = await axios.get(
       `http://localhost:5000/user/email/${local.email}`
     );
-
     if (item.data.length > 0) {
       setAccount(item.data[0].userName);
     }
@@ -24,7 +24,7 @@ const Home = () => {
 
   useEffect(() => {
       getData();
- 
+ // eslint-disable-next-line
   }, [local]);
 
   useEffect(() => {
@@ -44,6 +44,9 @@ const Home = () => {
     navigate("/account");
   };
 
+  const navToFav = () => {
+    navigate("/fav")
+  }
   return (
     <div className="backgroundHome">
       <div className="containerHome">
@@ -78,7 +81,7 @@ const Home = () => {
               </div>
             </li>
             <li>
-              <div className="card3Home">
+              <div className="card3Home" onClick={navToFav}>
                 <h1 className="iconAccount">
                   {" "}
                   <BsCart4 />{" "}
@@ -89,6 +92,7 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

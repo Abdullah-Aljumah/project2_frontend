@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate } from "react-router";
-
+import Footer from "../../Footer";
 import Nav from "../../Nav";
 const Stinks = () => {
   const navigate = useNavigate();
@@ -164,6 +164,7 @@ const Stinks = () => {
             );
           })}
       </div>
+      <Footer />
     </div>
   );
 };

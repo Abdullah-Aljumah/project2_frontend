@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Nav from "../Nav";
+import Footer from "../Footer";
 import { useState, useEffect } from "react";
 const Account = () => {
   const [account, setAccount] = useState([]);
@@ -11,6 +12,7 @@ const Account = () => {
   const [btn1, setBtn1] = useState(true);
   const [btn2, setBtn2] = useState(true);
   // Get data by email
+  
   const getData = async () => {
     const item = await axios.get(
       `http://localhost:5000/user/email/${local.email}`
@@ -144,6 +146,7 @@ const Account = () => {
           </div>
         );
       })}
+      <Footer />
     </div>
   );
 };

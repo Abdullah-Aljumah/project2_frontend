@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import Footer from "../../Footer";
 import ReactPlayer from "react-player/youtube";
 import "./style.css";
 import Nav from "../../Nav";
@@ -36,6 +37,7 @@ const Honorable = () => {
           </div>
         );
       })}
+      <Footer />
     </div>
   );
 };

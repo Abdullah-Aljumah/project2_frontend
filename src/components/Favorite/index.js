@@ -3,6 +3,8 @@ import Nav from "../Nav";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
+import Footer from "../Footer";
+
 const Favorite = () => {
   const navigate = useNavigate();
   const [account, setAccount] = useState([]);
@@ -62,13 +64,7 @@ const Favorite = () => {
             </div>
           );
         })}
-      {/* {account.length &&
-      account.map((item,i)=>{
-        <div key={i}>
-          <h1>{item[0].name}</h1>
-          <img src={item[0].img} alt="character"/>
-        </div>
-      }) } */}
+              <Footer />
     </div>
   );
 };

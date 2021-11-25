@@ -1,0 +1,19 @@
+.baackChar {
+    background-image: url("https://images2.alphacoders.com/118/thumb-1920-1187534.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+
+.cardInfoChar {
+    margin-top: 10%;
+    color: rgb(255, 123, 0);
+    text-align: center;
+    font-size:11px;
+    background-color: rgba(0, 0, 0, 0.24);
+    font-family: 'Estonia', cursive;
+}
