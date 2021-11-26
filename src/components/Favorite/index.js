@@ -8,6 +8,7 @@ import { BsCart4 } from "react-icons/bs";
 const Favorite = () => {
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
+  const [total, setTotal] = useState("");
 
   // Get email from localStorage
   const getLocalStorage = async () => {
@@ -22,6 +23,24 @@ const Favorite = () => {
     );
     setAccount(item.data);
   };
+
+  const totalPrice = () => {
+    let totalFirst = 0;
+    setTotal(0);
+    if (account.length > 0) {
+      account.map((item) => {
+        console.log("item.price", item.price);
+      return  totalFirst += item.price * 1;
+      });
+      console.log("totalFirst", totalFirst);
+    }
+    setTotal(totalFirst);
+  };
+
+  useEffect(() => {
+    totalPrice();
+     // eslint-disable-next-line
+  }, [account]);
 
   // invoke functions getLocalStorage
   useEffect(() => {
@@ -50,7 +69,7 @@ const Favorite = () => {
         </h1>
         <dv className="total">
           {" "}
-          <h2> Total : </h2>
+          <h2> Total : {total}$ </h2>
         </dv>
         {account.length &&
           account.map((item, i) => {

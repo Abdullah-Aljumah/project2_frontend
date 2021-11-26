@@ -3,6 +3,7 @@
   height: max-content;
   min-height: 100vh;
   color: white;
+  
 }
 
 .divCart {
@@ -17,6 +18,8 @@
   display: flex;
   list-style: none;
   width: max-content;
+  margin-bottom: 0;
+
 }
 
 .liCart {
@@ -26,11 +29,11 @@
   box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
-  cursor: pointer;
   text-align: center;
+  
 }
 
-.imageCharacterCart {
+.imageCharacterCart { 
   width: 25vh;
   height: 40vh;
 }
