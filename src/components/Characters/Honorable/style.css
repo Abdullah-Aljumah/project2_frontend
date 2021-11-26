@@ -1,15 +1,27 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gif {
-    width: 100%;
-    /* height: 50vh; */
+  margin-top: 0.2%;
+  width: 220vh;
+  height: 80vh;
 }
 
 .photo {
-    width: 20%;
+  width: 20%;
+}
+
+.nameCharacterInfo {
+  color: rgb(221, 185, 185);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 80.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
 }

@@ -24,16 +24,17 @@ const Honorable = () => {
   }, []);
 
   return (
-    <div>
-                <Nav />
-
+    <div className="baackChar2">
+      <Nav />
       {character.map((item, i) => {
         return (
-          <div key={i} className='container'>
-            <img src={item.gif} alt="gif dante" className="gif"/>
-            <img src={item.img} alt="character face" className='photo'/>
-            <h1 className='name'>{item.name}</h1>
-            <ReactPlayer url={item.video}  className='video'/>
+          <div key={i} className="container">
+            <h1 className="nameCharacterInfo">{item.name}</h1>
+
+            <img src={item.gif} alt="gif dante" className="gif" />
+            <img src={item.img} alt="character face" className="photo" />
+            <h1 className="name">{item.name}</h1>
+            <ReactPlayer url={item.video} className="video" />
           </div>
         );
       })}

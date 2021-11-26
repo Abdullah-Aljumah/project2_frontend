@@ -70,7 +70,7 @@ const Characters = () => {
           <p className="cardInfoChar"> " LIFE IS EASY. JUST STAY UN-DEAD. "</p>
         </li>
       </ul>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

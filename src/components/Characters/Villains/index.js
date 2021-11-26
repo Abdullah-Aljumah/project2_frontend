@@ -107,7 +107,7 @@ const Villains = () => {
   }, [remAdd]);
 
   return (
-    <div>
+    <div className="baackChar2">
       <Nav />
 
       <h1 className="firstWord">Honorables</h1>
@@ -155,9 +155,9 @@ const Villains = () => {
                     <button
                       id={items._id}
                       onClick={() => removeOrAdd(items._id)}
-                      className="btn"
+                      className="btn1"
                     >
-                      <span> Add </span>
+                      <span>Add </span>
                     </button>
                   </div>
                 </ul>
@@ -166,7 +166,6 @@ const Villains = () => {
           })}
       </div>
       <Footer />
-
     </div>
   );
 };

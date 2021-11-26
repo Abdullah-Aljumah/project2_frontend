@@ -5,6 +5,7 @@ import "./style.css";
 import { useNavigate } from "react-router";
 import Footer from "../../Footer";
 import Nav from "../../Nav";
+// import "../Honorables/style.css"
 const Stinks = () => {
   const navigate = useNavigate();
   const [honorable, setHonorable] = useState([]);
@@ -106,66 +107,66 @@ const Stinks = () => {
   }, [remAdd]);
 
   return (
-    <div>
-      <Nav />
+    <div className="baackChar2">
+    <Nav />
 
-      <h1 className="firstWord">Honorables</h1>
-      <div className="divSearchBar">
-        <input
-          className="searchBar"
-          type="text"
-          name="search"
-          placeholder="Search for character"
-          onChange={(e) => {
-            setResSearch(e.target.value);
-          }}
-        />
-      </div>
-      <div className="contaienrCards">
-        {honorable
-          // eslint-disable-next-line
-          .filter((item) => {
-            if (resSearch === "") {
-              return item;
-            } else if (
-              item.name.toLowerCase().includes(resSearch.toLowerCase())
-            ) {
-              return item;
-            }
-          })
-          .map((items, index) => {
-            return (
-              <div key={index} className="divCards">
-                <ul className="ulCards">
-                  <li
-                    onClick={() => characterInfo(items.name)}
-                    className="liCards"
-                  >
-                    <img
-                      className="imageCharacter"
-                      src={items.img}
-                      alt="character face"
-                    />
-                    <h1 className="characterName">{items.name}</h1>
-                    <h3 className="nameGame">{items.game}</h3>
-                    <p className="priceCard">{items.price}</p>
-                  </li>{" "}
-                  <div className="divBtn">
-                    <button
-                      id={items._id}
-                      onClick={() => removeOrAdd(items._id)}
-                      className="btn"
-                    >
-                      <span> Add </span>
-                    </button>
-                  </div>
-                </ul>
-              </div>
-            );
-          })}
-      </div>
-      <Footer />
+    <h1 className="firstWord">Honorables</h1>
+    <div className="divSearchBar">
+      <input
+        className="searchBar"
+        type="text"
+        name="search"
+        placeholder="Search for character"
+        onChange={(e) => {
+          setResSearch(e.target.value);
+        }}
+      />
     </div>
+    <div className="contaienrCards">
+      {honorable
+        // eslint-disable-next-line
+        .filter((item) => {
+          if (resSearch === "") {
+            return item;
+          } else if (
+            item.name.toLowerCase().includes(resSearch.toLowerCase())
+          ) {
+            return item;
+          }
+        })
+        .map((items, index) => {
+          return (
+            <div key={index} className="divCards">
+              <ul className="ulCards">
+                <li
+                  onClick={() => characterInfo(items.name)}
+                  className="liCards"
+                >
+                  <img
+                    className="imageCharacter"
+                    src={items.img}
+                    alt="character face"
+                  />
+                  <h1 className="characterName">{items.name}</h1>
+                  <h3 className="nameGame">{items.game}</h3>
+                  <p className="priceCard">{items.price}</p>
+                </li>{" "}
+                <div className="divBtn">
+                  <button
+                    id={items._id}
+                    onClick={() => removeOrAdd(items._id)}
+                    className="btn1"
+                  >
+                    <span>Add </span>
+                  </button>
+                </div>
+              </ul>
+            </div>
+          );
+        })}
+    </div>
+    <Footer />
+  </div>
   );
 };
 

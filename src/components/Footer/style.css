@@ -4,8 +4,9 @@
   position: absolute;
   bottom: 1;
   width: 100%;
-  /* height: %; */
+  height: 4%;
   margin: 0 auto;
-  background-color: red;
+  background-color: rgba(3, 3, 3, 0.788);
+  text-align: center;
 }
 

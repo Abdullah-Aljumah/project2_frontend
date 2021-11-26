@@ -9,10 +9,6 @@
 .baackChar2 {
   background-image: url("https://images2.alphacoders.com/118/thumb-1920-1187534.jpg");
   width: 100%;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover;
-  background-position: center; */
-  /* height: 100vh; */
 }
 
 .imageCharacter:hover {
@@ -61,7 +57,6 @@
   -webkit-box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 1);
   background-color: rgba(172, 169, 169, 0.212);
-
 }
 /*End ul */
 
@@ -93,25 +88,24 @@
 
 /* Info card */
 .characterName {
-  font-size: 23px;
+  font-size: 24px;
   margin-top: 2%;
   margin-left: 3%;
 }
 
 .nameGame {
-  font-size: 0.8rem;
+  font-size: 13px;
   margin-left: 3%;
 }
 
 .priceCard {
-  font-size: 1rem;
+  font-size: 20px;
   margin-left: 3%;
 }
 
 /* Button */
-
-.btn {
-  padding: 12px;
+.btn1 {
+  padding: 9px;
   cursor: pointer;
   letter-spacing: 2.2px;
   position: relative;
@@ -122,7 +116,7 @@
   font-size: 13.5px;
 }
 
-.btn:before {
+.btn1:before {
   content: "";
   position: absolute;
   height: 150px;
@@ -135,7 +129,7 @@
   opacity: 0.3;
 }
 
-.btn:hover:before {
+.btn1:hover:before {
   left: 95%;
 }
 
