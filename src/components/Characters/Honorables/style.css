@@ -6,14 +6,14 @@
   filter: grayscale(50%);
 }
 
-.baackChar2 {
-  background-image: url("https://images2.alphacoders.com/118/thumb-1920-1187534.jpg");
-  width: 100%;
-}
-
 .imageCharacter:hover {
   transition: 0.4s ease-in-out;
   filter: grayscale(0%);
+}
+
+.baackChar2 {
+  background-image: url("https://images2.alphacoders.com/118/thumb-1920-1187534.jpg");
+  width: 100%;
 }
 
 .firstWord {
@@ -29,7 +29,6 @@
   grid-gap: 2.5rem;
   margin-left: 6%;
   padding: 2%;
-  /* margin-bottom: 5%; */
 }
 
 /* Ul */

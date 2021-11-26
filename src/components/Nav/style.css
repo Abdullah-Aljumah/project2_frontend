@@ -25,7 +25,7 @@
 
 .h2Nav:hover {
   transition: 0.2s ease-in-out;
-  color: white;
+  color: rgba(179, 149, 51, 0.945);
 }
 
 .linkNav {

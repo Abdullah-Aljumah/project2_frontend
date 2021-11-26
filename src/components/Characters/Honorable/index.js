@@ -29,12 +29,18 @@ const Honorable = () => {
       {character.map((item, i) => {
         return (
           <div key={i} className="container">
+            <div>
             <h1 className="nameCharacterInfo">{item.name}</h1>
-
             <img src={item.gif} alt="gif dante" className="gif" />
-            <img src={item.img} alt="character face" className="photo" />
-            <h1 className="name">{item.name}</h1>
-            <ReactPlayer url={item.video} className="video" />
+            </div>
+            <div className="infoPage3">
+            <img src={item.img} alt="character face" className="photoInfo" />
+            <div>
+            <p className="descCharacter">{item.desc}</p>
+            <a href={item.voice} className="voiceActor" > Voice Actor </a>
+            </div>
+            </div>
+            <ReactPlayer url={item.video} className="infoVideo" />
           </div>
         );
       })}

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Nav from "../Nav";
 import "./style.css";
-import Footer from "../Footer";
+// import Footer from "../Footer";
 const Characters = () => {
   const navigate = useNavigate();
   const navToHonorbale = () => {

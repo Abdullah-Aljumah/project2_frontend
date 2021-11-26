@@ -27,7 +27,7 @@ const Nav = () => {
           {" "}
           <h1 onClick={navHome} className="logo">
             {" "}
-            GOLD CARDS{" "}
+            GOLDEN CARDS{" "}
           </h1>
         </li>
         <Link to="/home" className="linkNav">
