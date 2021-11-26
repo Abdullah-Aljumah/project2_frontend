@@ -43,7 +43,7 @@ const Characters = () => {
           <div className="categoryHome">
             <img
               className="categotyHome"
-              src="https://c.wallhere.com/photos/66/a2/artwork_dark_Venom-1476791.jpg!d"
+              src="https://www.artranked.com/images/56/566bcd45025e6c030324843711059dd1.jpg"
               alt="villains"
             />
             <div className="textCategory" onClick={navToVillains}>

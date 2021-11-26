@@ -11,16 +11,17 @@
 }
 
 .nameCharacterInfo {
-  color: rgb(255, 255, 255);
+  color: rgba(179, 149, 51, 0.945);
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.658);
   width: 213vh;
   height: 82.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 80px;
-  font-family: "Lucida Handwriting";
+  /* font-family: "Lucida Handwriting"; */
+  font-family: "Monoton", cursive;
 }
 
 .infoPage3 {
@@ -31,13 +32,15 @@
 }
 
 .photoInfo {
-  width: 55vh;
+  width: 43vh;
+  height: 75vh;
   border-radius: 2%;
   box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
   background-color: rgba(172, 169, 169, 0.151);
   margin-right: 2%;
+
 }
 
 .descCharacter {
@@ -47,9 +50,72 @@
 }
 
 .voiceActor {
-  padding: 2%;
+  display: block;
+  color: rgba(179, 149, 51, 0.945);
+  margin-top: 1%;
+}
+
+.voiceActor:hover {
+  color: rgba(179, 149, 51, 0.945);
 }
 
 .infoVideo {
   margin-bottom: 3%;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+}
+
+.btnInfo {
+  margin: auto;
+  padding: 9px;
+  cursor: pointer;
+  letter-spacing: 2.2px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(179, 149, 51, 0.945);
+  margin-bottom: 4%;
+  width: 150px;
+  font-size: 18px;
+}
+
+.btnInfo:before {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 50px;
+  background: white;
+  left: -55px;
+  top: -40px;
+  transform: rotate(37deg);
+  transition: all 0.35s;
+  opacity: 0.3;
+}
+
+.btnInfo:hover:before {
+  left: 95%;
+}
+
+.divButtonInfo {
+  display: flex;
+  margin-top: 5%;
+}
+
+.priceInfo2 {
+  margin: auto;
+}
+
+.priceInfo {
+    padding: 5%;
+  background-color: rgba(0, 0, 0, 0.329);
+  font-size: 20px;
+  /* color:  rgba(179, 149, 51, 0.945); */
+  color: white;
+  font-weight: bold;
+}
+
+.divPrice {
+  /* margin: auto; */
+  text-align: center;
+  width: 20vh;
 }

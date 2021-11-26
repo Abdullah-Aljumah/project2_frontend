@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 .containerNav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.301);
   height: max-content;
@@ -39,7 +41,11 @@
   font-size: 4.5vh;
   background-color: transparent;
   color: rgba(179, 149, 51, 0.945);
-  font-family: 'Lucida Handwriting';
+  /* font-family: 'Lucida Handwriting'; */
+  /* font-family: 'Monoton'; */
+  font-family: 'Monoton', cursive;
   cursor: pointer;
+  letter-spacing: 3px;
+
 }
 
