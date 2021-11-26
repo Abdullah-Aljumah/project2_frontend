@@ -110,7 +110,7 @@ const Stinks = () => {
     <div className="baackChar2">
     <Nav />
 
-    <h1 className="firstWord">Honorables</h1>
+    <h1 className="firstWord"> Stinks </h1>
     <div className="divSearchBar">
       <input
         className="searchBar"
@@ -149,7 +149,7 @@ const Stinks = () => {
                   />
                   <h1 className="characterName">{items.name}</h1>
                   <h3 className="nameGame">{items.game}</h3>
-                  <p className="priceCard">{items.price}</p>
+                  <p className="priceCard">{items.price}$</p>
                 </li>{" "}
                 <div className="divBtn">
                   <button

@@ -117,7 +117,7 @@ const Honorable = () => {
                 </a>
                 </p>
                 <div className="divPrice">
-                <h2 className="priceInfo">Price: {item.price} </h2>
+                <h2 className="priceInfo">Price: {item.price}$ </h2>
                 </div>
                 <div className="divButtonInfo">
                 <button

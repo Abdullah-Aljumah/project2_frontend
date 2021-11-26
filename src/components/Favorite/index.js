@@ -1,12 +1,11 @@
 import React from "react";
 import Nav from "../Nav";
 import axios from "axios";
-import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
-import Footer from "../Footer";
+import "./style.css";
+import { BsCart4 } from "react-icons/bs";
 
 const Favorite = () => {
-  const navigate = useNavigate();
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
 
@@ -36,37 +35,63 @@ const Favorite = () => {
     // eslint-disable-next-line
   }, [local]);
 
-  // Navigate to character info
-  const itemInfo = (name) => {
-    console.log(name);
-    navigate(`/character/name/${name}`);
-  };
-
   // Remove from favorite
   const removeFavorite = (id) => {
     axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
     getLocalStorage();
   };
+
   return (
     <div>
-      <Nav />
-      <p>Favorite</p>
-      {account.length &&
-        account.map((item, i) => {
-          return (
-            <div>
-              <div onClick={() => itemInfo(item.name)}>
-                {" "}
-                <h1>{item.name}</h1>
-                <img src={item.img} alt="character" />
+      <div className="baackChar5" id="containerCart1">
+        <Nav />
+        <h1 className="incoCartCart">
+          <BsCart4 />
+        </h1>
+        <dv className="total">
+          {" "}
+          <h2> Total : </h2>
+        </dv>
+        {account.length &&
+          account.map((item, i) => {
+            return (
+              <div key={i} className="divCart">
+                <ul className="ulCart">
+                  <li className="liCart">
+                    {" "}
+                    <img
+                      className="imageCharacterCart"
+                      src={item.img}
+                      alt="character"
+                    />
+                    <h1 className="characterNameCart">{item.name}</h1>
+                    <h1 className="characterNameCart">{item.game}</h1>
+                    <h1 className="characterNameCart">{item.price}$</h1>
+                    <div className="btnCartDiv">
+                      <button
+                        onClick={() => removeFavorite(item._id)}
+                        className="btn1"
+                        id="btnCart"
+                      >
+                        {" "}
+                        Remove{" "}
+                      </button>
+                    </div>
+                  </li>
+                  <div className="divBtnCart"></div>
+                </ul>
               </div>
-              <button onClick={() => removeFavorite(item._id)}> Remove</button>
-            </div>
-          );
-        })}
-              <Footer />
+            );
+          })}
+      </div>
+      <p className="footer" id="footerCart">
+        © 2021 Copyright: GoldenCards.com
+      </p>
     </div>
   );
 };
 
 export default Favorite;
+
+// onClick={() => itemInfo(item.name)}
+//  onClick={() => itemInfo(item.name)}

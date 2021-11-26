@@ -2,12 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import "./style.css";
-// import { AiOutlineHome } from "react-icons/ai";
-// import { VscAccount } from "react-icons/vsc";
-// import { BiCategoryAlt } from "react-icons/bi";
-// import { MdFavoriteBorder } from "react-icons/md";
 import { BsCart4 } from "react-icons/bs";
-
 import { FiLogOut } from "react-icons/fi";
 const Nav = () => {
   const navigate = useNavigate();

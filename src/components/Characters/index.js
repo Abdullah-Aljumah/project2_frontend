@@ -70,7 +70,7 @@ const Characters = () => {
           <p className="cardInfoChar"> " LIFE IS EASY. JUST STAY UN-DEAD. "</p>
         </li>
       </ul>
-      {/* <Footer /> */}
+      <p className="footer" id="footerCart1">© 2021 Copyright: GoldenCards.com</p>
     </div>
   );
 };

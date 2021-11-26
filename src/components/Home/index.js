@@ -7,7 +7,6 @@ import { BsCart4 } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import Footer from "../Footer";
 
 const Home = () => {
   const [account, setAccount] = useState("");
@@ -92,7 +91,7 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <Footer />
+      <p className="footer" id="footerCart1">© 2021 Copyright: GoldenCards.com</p>
     </div>
   );
 };

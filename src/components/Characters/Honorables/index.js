@@ -151,7 +151,7 @@ const Honorables = () => {
                     />
                     <h1 className="characterName">{items.name}</h1>
                     <h3 className="nameGame">{items.game}</h3>
-                    <p className="priceCard">{items.price}</p>
+                    <p className="priceCard">{items.price}$</p>
                   </li>{" "}
                   <div className="divBtn">
                     <button

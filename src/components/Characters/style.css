@@ -17,3 +17,7 @@
     background-color: rgba(0, 0, 0, 0.24);
     font-family: 'Estonia', cursive;
 }
+
+#footerCart1 {
+    bottom: 0;
+}

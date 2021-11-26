@@ -1,0 +1,63 @@
+.baackChar5 {
+  background-image: url("https://images2.alphacoders.com/118/thumb-1920-1187534.jpg");
+  height: max-content;
+  min-height: 100vh;
+  color: white;
+}
+
+.divCart {
+  /* display: inline-block; */
+  margin: auto;
+  width: max-content;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.ulCart {
+  display: flex;
+  list-style: none;
+  width: max-content;
+}
+
+.liCart {
+  display: flex;
+  width: 100vh;
+  text-align: center;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  cursor: pointer;
+  text-align: center;
+}
+
+.imageCharacterCart {
+  width: 25vh;
+  height: 40vh;
+}
+
+.characterNameCart {
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.incoCartCart {
+  text-align: center;
+  font-size: 5rem;
+  color: rgba(179, 149, 51, 0.945);
+}
+
+#btnCart {
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.btnCartDiv {
+  float: right;
+  margin-left: auto;
+  margin-top: 17%;
+  margin-right: 2%;
+}
+
+.total {
+  text-align: center;
+}
