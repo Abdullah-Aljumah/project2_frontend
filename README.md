@@ -1,6 +1,6 @@
 # GOLDEN CARDS
 
-GOLDEN CARDS I=it's a website for selling cards
+GOLDEN CARDS It's a website for selling cards
 
 ## Trello
 
