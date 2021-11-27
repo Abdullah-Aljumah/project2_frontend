@@ -35,7 +35,7 @@
 
 .imageCharacterCart { 
   width: 25vh;
-  height: 40vh;
+  height: 36vh;
 }
 
 .characterNameCart {
@@ -57,7 +57,7 @@
 .btnCartDiv {
   float: right;
   margin-left: auto;
-  margin-top: 17%;
+  margin-top: 15%;
   margin-right: 2%;
 }
 

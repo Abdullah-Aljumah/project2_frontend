@@ -10,9 +10,10 @@ const Register = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
 
   const getData = async () => {
-    const items = await axios.get("http://localhost:5000/user");
+    const items = await axios.get(`${URL_BASE}/user`);
     setUsers(items.data);
   };
 
@@ -29,7 +30,7 @@ const Register = () => {
 
     if (check) {
       try {
-        axios.post("http://localhost:5000/user/register", {
+        axios.post(`${URL_BASE}/user/register`, {
           userName: userName,
           email: email,
           password: password,

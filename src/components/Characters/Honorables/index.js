@@ -12,7 +12,7 @@ const Honorables = () => {
   const [resSearch, setResSearch] = useState("");
   const [local, setLocal] = useState("");
   const [remAdd, setRemAdd] = useState([]);
-  // const [addOrRemove, setAddOrRemove] = useState(true)
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
 
   useEffect(() => {
     getHonorable();
@@ -37,7 +37,7 @@ const Honorables = () => {
   const getHonorable = async () => {
     try {
       const items = await axios.get(
-        "http://localhost:5000/character/honorbale"
+        `${URL_BASE}/character/honorbale`
       );
       setHonorable(items.data);
     } catch (error) {
@@ -54,7 +54,7 @@ const Honorables = () => {
   const getDataEmail = async () => {
     const user = JSON.parse(localStorage.getItem("newUser"));
     const item = await axios.get(
-      `http://localhost:5000/user/favorite/${user.email}`
+      `${URL_BASE}/user/favorite/${user.email}`
     );
     setRemAdd(item.data);
   };
@@ -71,13 +71,13 @@ const Honorables = () => {
       document.getElementById(`${id}`).innerHTML = "Add";
 
       await axios.put(
-        `http://localhost:5000/user/removeFav/${local.email}/${id}`
+        `${URL_BASE}/user/removeFav/${local.email}/${id}`
       );
     } else {
       document.getElementById(`${id}`).innerHTML = "Remove";
 
       await axios.put(
-        `http://localhost:5000/user/favorite/${local.email}/${id}`
+        `${URL_BASE}/user/favorite/${local.email}/${id}`
       );
     }
     test = [];

@@ -1,0 +1,62 @@
+.firstDiv {
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 1%;
+  text-align: center;
+}
+
+.firstDiv h1 {
+  font-family: "Source Code Pro";
+}
+
+.yourAccount {
+  font-family: "Source Code Pro";
+}
+
+.accountIcon {
+  color: white;
+  font-size: 5rem;
+}
+
+.accountIcon {
+  text-align: center;
+}
+
+.containerAccount {
+  width: max-content;
+  margin: auto;
+  margin-top: 3%;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  padding: 1%;
+  margin-top: 2%;
+}
+
+#bio {
+  height: 37px;
+  border: 1px solid black;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  border-radius: 5%;
+  margin-left: 1%;
+}
+
+#userName {
+  height: 37px;
+  border: 1px solid black;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 1);
+  border-radius: 5%;
+  margin-left: 1%;
+}
+
+#footerCart1 {
+  color: rgba(255, 255, 255, 0.685);
+  position: absolute;
+  bottom: 1;
+  width: 100%;
+  height: 4%;
+  margin: 0 auto;
+  background-color: rgb(0, 2, 29);
+  text-align: center;
+}

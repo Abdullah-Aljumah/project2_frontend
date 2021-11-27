@@ -11,19 +11,18 @@ import { useEffect } from "react";
 const Home = () => {
   const [account, setAccount] = useState("");
   const [local, setLocal] = useState([]);
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
 
   const getData = async () => {
-    const item = await axios.get(
-      `http://localhost:5000/user/email/${local.email}`
-    );
+    const item = await axios.get(`${URL_BASE}/user/email/${local.email}`);
     if (item.data.length > 0) {
       setAccount(item.data[0].userName);
     }
   };
 
   useEffect(() => {
-      getData();
- // eslint-disable-next-line
+    getData();
+    // eslint-disable-next-line
   }, [local]);
 
   useEffect(() => {
@@ -44,8 +43,8 @@ const Home = () => {
   };
 
   const navToFav = () => {
-    navigate("/fav")
-  }
+    navigate("/fav");
+  };
   return (
     <div className="backgroundHome">
       <div className="containerHome">
@@ -59,7 +58,10 @@ const Home = () => {
                     {" "}
                     Welocme
                   </h1>
-                  <h1  id="welcomingH1" className="accountH1"> {account} </h1>
+                  <h1 id="welcomingH1" className="accountH1">
+                    {" "}
+                    {account}{" "}
+                  </h1>
                 </div>
                 <p className="welcoming" id="pWelcoming">
                   {" "}
@@ -91,7 +93,9 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <p className="footer" id="footerCart1">© 2021 Copyright: GoldenCards.com</p>
+      <p className="footer" id="footerCart1">
+        © 2021 Copyright: GoldenCards.com
+      </p>
     </div>
   );
 };

@@ -10,9 +10,9 @@ const Login = () => {
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
   const getData = async () => {
-    const items = await axios.get("http://localhost:5000/user");
+    const items = await axios.get(`${URL_BASE}/user`);
     setUsers(items.data);
   };
 
@@ -37,31 +37,30 @@ const Login = () => {
       try {
         localStorage.setItem("newUser", JSON.stringify({ email }));
         Swal.fire({
-          position: 'top-center',
-          icon: 'success',
-          title: 'Success',
+          position: "top-center",
+          icon: "success",
+          title: "Success",
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
         navigate("/home");
       } catch (error) {
         console.log("error ", error);
       }
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Wrong email or password',
+        icon: "error",
+        title: "Oops...",
+        text: "Wrong email or password",
         // footer: '<a href="">Why do I have this issue?</a>'
-      })
+      });
     }
-    
   };
 
   return (
     <div className="background">
       <div className="backgroundDiv">
-        <img src="https://i.gifer.com/Az1x.gif" alt="gif background"/>
+        <img src="https://i.gifer.com/Az1x.gif" alt="gif background" />
       </div>
       <div className="loginContainer">
         <h1 className="iconLogin">

@@ -9,6 +9,7 @@ const Favorite = () => {
   const [account, setAccount] = useState([]);
   const [local, setLocal] = useState([]);
   const [total, setTotal] = useState("");
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
 
   // Get email from localStorage
   const getLocalStorage = async () => {
@@ -19,7 +20,7 @@ const Favorite = () => {
   // Get info the character base on email from backend
   const getData = async () => {
     const item = await axios.get(
-      `http://localhost:5000/user/favorite/${local.email}`
+      `${URL_BASE}/user/favorite/${local.email}`
     );
     setAccount(item.data);
   };
@@ -56,7 +57,7 @@ const Favorite = () => {
 
   // Remove from favorite
   const removeFavorite = (id) => {
-    axios.put(`http://localhost:5000/user/removeFav/${local.email}/${id}`);
+    axios.put(`${URL_BASE}/user/removeFav/${local.email}/${id}`);
     getLocalStorage();
   };
 

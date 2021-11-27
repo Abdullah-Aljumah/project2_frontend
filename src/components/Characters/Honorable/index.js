@@ -12,10 +12,11 @@ const Honorable = () => {
   const [character, setCharacter] = useState([]);
   const [local, setLocal] = useState("");
   const [remAdd, setRemAdd] = useState([]);
+  const URL_BASE = "https://project2-backendd.herokuapp.com";
 
   const getCharacter = async () => {
     const item = await axios.get(
-      `http://localhost:5000/character/name/${name}`
+      `${URL_BASE}/character/name/${name}`
     );
     setCharacter(item.data);
     // console.log(character);
@@ -36,7 +37,7 @@ const Honorable = () => {
   const getDataEmail = async () => {
     const user = JSON.parse(localStorage.getItem("newUser"));
     const item = await axios.get(
-      `http://localhost:5000/user/favorite/${user.email}`
+      `${URL_BASE}/user/favorite/${user.email}`
     );
     setRemAdd(item.data);
   };
@@ -52,13 +53,13 @@ const Honorable = () => {
       document.getElementById(`${id}`).innerHTML = "Add";
 
       await axios.put(
-        `http://localhost:5000/user/removeFav/${local.email}/${id}`
+        `${URL_BASE}/user/removeFav/${local.email}/${id}`
       );
     } else {
       document.getElementById(`${id}`).innerHTML = "Remove";
 
       await axios.put(
-        `http://localhost:5000/user/favorite/${local.email}/${id}`
+        `${URL_BASE}/user/favorite/${local.email}/${id}`
       );
     }
     test = [];
